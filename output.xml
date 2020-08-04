@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.1 (Python 3.8.2 on darwin)" generated="20200802 20:12:15.197" rpa="false">
+<suite id="s1" name="AscendTV" source="/Users/smartwasap/Desktop/AscendTravel/TestCase/AscendTV.robot">
+<test id="s1-t1" name="Login AscendTR">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>https://www.ascendtravel.com/</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20200802 20:12:15.410" level="INFO">Opening browser 'chrome' to base url 'https://www.ascendtravel.com/'.</msg>
+<status status="PASS" starttime="20200802 20:12:15.409" endtime="20200802 20:12:24.683"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>//button[@class="icon-close2 button"]</arg>
+</arguments>
+<msg timestamp="20200802 20:12:24.684" level="INFO">Clicking button '//button[@class="icon-close2 button"]'.</msg>
+<status status="PASS" starttime="20200802 20:12:24.684" endtime="20200802 20:12:26.429"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>id=landing-btn-getstarted</arg>
+</arguments>
+<msg timestamp="20200802 20:12:26.429" level="INFO">Clicking button 'id=landing-btn-getstarted'.</msg>
+<status status="PASS" starttime="20200802 20:12:26.429" endtime="20200802 20:12:28.448"></status>
+</kw>
+<kw name="AscendTV Input Email" library="tools2">
+<arguments>
+<arg>${EMAIL}</arg>
+</arguments>
+<kw name="Wait until and input text" library="tools">
+<arguments>
+<arg>name=email</arg>
+<arg>${data}</arg>
+</arguments>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>3x</arg>
+<arg>3s</arg>
+<arg>Input Text</arg>
+<arg>${locator}</arg>
+<arg>${data}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>${data}</arg>
+</arguments>
+<msg timestamp="20200802 20:12:28.451" level="INFO">Typing text 'pitchayanan.rat@pantavanij.com' into text field 'name=email'.</msg>
+<status status="PASS" starttime="20200802 20:12:28.451" endtime="20200802 20:12:28.636"></status>
+</kw>
+<status status="PASS" starttime="20200802 20:12:28.450" endtime="20200802 20:12:28.636"></status>
+</kw>
+<status status="PASS" starttime="20200802 20:12:28.450" endtime="20200802 20:12:28.637"></status>
+</kw>
+<status status="PASS" starttime="20200802 20:12:28.449" endtime="20200802 20:12:28.637"></status>
+</kw>
+<kw name="Click continue" library="tools2">
+<kw name="Wait until and Click Element" library="tools">
+<arguments>
+<arg>id=landing-btn-email-verify-domain</arg>
+</arguments>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>3x</arg>
+<arg>3s</arg>
+<arg>Click Element</arg>
+<arg>${locator}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg timestamp="20200802 20:12:28.639" level="INFO">Clicking element 'id=landing-btn-email-verify-domain'.</msg>
+<status status="PASS" starttime="20200802 20:12:28.638" endtime="20200802 20:12:28.719"></status>
+</kw>
+<status status="PASS" starttime="20200802 20:12:28.638" endtime="20200802 20:12:28.719"></status>
+</kw>
+<status status="PASS" starttime="20200802 20:12:28.638" endtime="20200802 20:12:28.719"></status>
+</kw>
+<status status="PASS" starttime="20200802 20:12:28.637" endtime="20200802 20:12:28.719"></status>
+</kw>
+<kw name="Verify Password" library="tools2">
+<assign>
+<var>${status}</var>
+</assign>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Element Is Visible</arg>
+<arg>id=landing-inp-password-login</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>id=landing-inp-password-login</arg>
+</arguments>
+<status status="PASS" starttime="20200802 20:12:28.721" endtime="20200802 20:12:29.371"></status>
+</kw>
+<msg timestamp="20200802 20:12:29.371" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20200802 20:12:28.720" endtime="20200802 20:12:29.371"></status>
+</kw>
+<msg timestamp="20200802 20:12:29.371" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20200802 20:12:28.720" endtime="20200802 20:12:29.371"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${status}==${True}</arg>
+<arg>Run Keywords</arg>
+<arg>tools2.AscendTV Input Password</arg>
+<arg>Sue@May19</arg>
+<arg>AND</arg>
+<arg>tools2.Click login</arg>
+<arg>ELSE</arg>
+<arg>tools2.Register Page</arg>
+<arg>โรงแรม</arg>
+<arg>ABCD</arg>
+<arg>Smart</arg>
+<arg>0882312939</arg>
+<arg>AAAAAAAA</arg>
+<arg>Uruguay</arg>
+<arg>LoremIpsum</arg>
+</arguments>
+<kw name="Run Keywords" library="BuiltIn">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>tools2.AscendTV Input Password</arg>
+<arg>Sue@May19</arg>
+<arg>AND</arg>
+<arg>tools2.Click login</arg>
+</arguments>
+<kw name="AscendTV Input Password" library="tools2">
+<arguments>
+<arg>Sue@May19</arg>
+</arguments>
+<kw name="Wait until and input text" library="tools">
+<arguments>
+<arg>id=landing-inp-password-login</arg>
+<arg>${data}</arg>
+</arguments>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>3x</arg>
+<arg>3s</arg>
+<arg>Input Text</arg>
+<arg>${locator}</arg>
+<arg>${data}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>${data}</arg>
+</arguments>
+<msg timestamp="20200802 20:12:29.375" level="INFO">Typing text 'Sue@May19' into text field 'id=landing-inp-password-login'.</msg>
+<status status="PASS" starttime="20200802 20:12:29.374" endtime="20200802 20:12:29.447"></status>
+</kw>
+<status status="PASS" starttime="20200802 20:12:29.374" endtime="20200802 20:12:29.447"></status>
+</kw>
+<status status="PASS" starttime="20200802 20:12:29.373" endtime="20200802 20:12:29.447"></status>
+</kw>
+<status status="PASS" starttime="20200802 20:12:29.372" endtime="20200802 20:12:29.447"></status>
+</kw>
+<kw name="Click login" library="tools2">
+<kw name="Wait until and Click Element" library="tools">
+<arguments>
+<arg>id=landing-btn-login</arg>
+</arguments>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>3x</arg>
+<arg>3s</arg>
+<arg>Click Element</arg>
+<arg>${locator}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg timestamp="20200802 20:12:29.449" level="INFO">Clicking element 'id=landing-btn-login'.</msg>
+<status status="PASS" starttime="20200802 20:12:29.449" endtime="20200802 20:12:29.522"></status>
+</kw>
+<status status="PASS" starttime="20200802 20:12:29.449" endtime="20200802 20:12:29.522"></status>
+</kw>
+<status status="PASS" starttime="20200802 20:12:29.448" endtime="20200802 20:12:29.522"></status>
+</kw>
+<status status="PASS" starttime="20200802 20:12:29.448" endtime="20200802 20:12:29.522"></status>
+</kw>
+<status status="PASS" starttime="20200802 20:12:29.372" endtime="20200802 20:12:29.522"></status>
+</kw>
+<status status="PASS" starttime="20200802 20:12:29.372" endtime="20200802 20:12:29.522"></status>
+</kw>
+<status status="PASS" starttime="20200802 20:12:15.408" endtime="20200802 20:12:29.523" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20200802 20:12:15.199" endtime="20200802 20:12:29.524"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="AscendTV">AscendTV</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
